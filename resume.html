@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume of Trisha Mae C. Agbayani">
+    <title>Trisha Mae C. Agbayani | Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #171717;
+            --muted: #666;
+            --line: #d9ddd0;
+            --lime: #c5f52a;
+            --paper: #fffef8;
+            --soft: #f3f5eb;
+            --mono: "DM Mono", monospace;
+            --sans: "Manrope", sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: #202020;
+            color: var(--ink);
+            font-family: var(--sans);
+            line-height: 1.55;
+        }
+        .toolbar {
+            width: min(100% - 40px, 900px);
+            margin: 24px auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            color: #fff;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        .toolbar a, .toolbar button {
+            color: #fff;
+            border: 1px solid #666;
+            background: transparent;
+            padding: 10px 14px;
+            font: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .toolbar button:hover, .toolbar a:hover { border-color: var(--lime); color: var(--lime); }
+        .resume {
+            width: min(100% - 40px, 900px);
+            margin: 24px auto 48px;
+            padding: 58px 68px;
+            background: var(--paper);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, .25);
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            padding-bottom: 28px;
+            border-bottom: 5px solid var(--lime);
+        }
+        h1 {
+            margin: 0 0 6px;
+            font-size: clamp(30px, 5vw, 48px);
+            line-height: 1;
+            letter-spacing: -.06em;
+        }
+        .role {
+            margin: 0;
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+        }
+        .contact {
+            max-width: 270px;
+            text-align: right;
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 11px;
+            line-height: 1.8;
+        }
+        .contact a { color: inherit; text-decoration: none; }
+        .contact a:hover { color: var(--ink); }
+        section { padding-top: 27px; }
+        .section-title {
+            margin: 0 0 13px;
+            color: #70756a;
+            font-family: var(--mono);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+        .objective {
+            margin: 0;
+            max-width: 720px;
+            font-size: 15px;
+        }
+        .entry {
+            display: grid;
+            grid-template-columns: 175px 1fr;
+            gap: 24px;
+            padding: 15px 0;
+            border-top: 1px solid var(--line);
+        }
+        .entry:first-of-type { border-top: 0; padding-top: 0; }
+        .date {
+            color: #70756a;
+            font-family: var(--mono);
+            font-size: 11px;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+        h2, h3, p { margin-top: 0; }
+        h3 {
+            margin-bottom: 3px;
+            font-size: 16px;
+            line-height: 1.35;
+        }
+        .organization {
+            margin-bottom: 7px;
+            color: #5c6258;
+            font-family: var(--mono);
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+        .details, ul { margin-bottom: 0; }
+        ul { padding-left: 18px; }
+        li { margin-bottom: 4px; font-size: 13px; }
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px 24px;
+        }
+        .skill {
+            padding: 12px 14px;
+            background: var(--soft);
+            font-size: 13px;
+        }
+        .skill strong { display: block; margin-bottom: 3px; font-size: 12px; }
+        .skill span { color: #555; }
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .compact-list { padding-left: 18px; margin: 0; }
+        .compact-list li { font-size: 12px; }
+        footer {
+            margin-top: 35px;
+            padding-top: 14px;
+            border-top: 1px solid var(--line);
+            color: #777;
+            font-family: var(--mono);
+            font-size: 10px;
+            text-align: right;
+        }
+        @media (max-width: 650px) {
+            .toolbar { width: min(100% - 28px, 900px); }
+            .resume { width: min(100% - 28px, 900px); margin-top: 14px; padding: 34px 24px; }
+            header, .two-column { display: block; }
+            .contact { margin-top: 20px; text-align: left; }
+            .entry { display: block; }
+            .date { margin-bottom: 6px; }
+            .skills { grid-template-columns: 1fr; }
+        }
+        @media print {
+            body { background: #fff; }
+            .toolbar { display: none; }
+            .resume { width: 100%; margin: 0; padding: 0; box-shadow: none; }
+            @page { margin: .55in; size: A4; }
+        }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <a href="index.html">Back to portfolio</a>
+        <button type="button" onclick="window.print()">Print / Save PDF</button>
+    </div>
+
+    <main class="resume">
+        <header>
+            <div>
+                <h1>Trisha Mae C. Agbayani</h1>
+                <p class="role">Customer Service Representative | ICT Graduate</p>
+            </div>
+            <div class="contact">
+                Bagbaguin, Caloocan City<br>
+                <a href="tel:+639929164133">+63 992 916 4133</a><br>
+                <a href="mailto:trishamaecelestino@gmail.com">trishamaecelestino@gmail.com</a>
+            </div>
+        </header>
+
+        <section>
+            <h2 class="section-title">Objective</h2>
+            <p class="objective">To obtain a Customer Service Representative position in the BPO industry where I can utilize my communication, problem-solving, and technical skills to deliver efficient and high-quality customer service.</p>
+        </section>
+
+        <section>
+            <h2 class="section-title">Education</h2>
+            <div class="entry">
+                <div class="date">September 2026</div>
+                <div>
+                    <h3>Diploma in Information and Communication Technology</h3>
+                    <div class="organization">Polytechnic University of the Philippines - Institute of Technology | Cum Laude</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="two-column">
+            <div>
+                <h2 class="section-title">Academic Awards</h2>
+                <ul class="compact-list">
+                    <li>President's Lister - 1st year, 1st and 2nd Semesters; 2nd year, 1st Semester</li>
+                    <li>Dean's Lister - 2nd year, 2nd Semester; 3rd year, 1st and 2nd Semesters</li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="section-title">Certifications</h2>
+                <ul class="compact-list">
+                    <li>Computer Systems Servicing NC II - February 28, 2024</li>
+                    <li>Visual Graphic Design NC III - April 4, 2025</li>
+                    <li>Google Looker Studio Dashboarding - February 17, 2026</li>
+                    <li>Content Creation Level III - July 20, 2026</li>
+                    <li>Cyber Threat Monitoring Level I - October 2026</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Core Skills</h2>
+            <div class="skills">
+                <div class="skill"><strong>Programming</strong><span>C, C++, C#, Java, Python</span></div>
+                <div class="skill"><strong>Web Development</strong><span>HTML, CSS, JavaScript</span></div>
+                <div class="skill"><strong>Data and Documents</strong><span>MySQL, Microsoft Excel, Microsoft Word, Google Looker Studio</span></div>
+                <div class="skill"><strong>Design and Content</strong><span>Figma, Canva, Adobe Photoshop, CapCut</span></div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Work Experience</h2>
+            <div class="entry">
+                <div class="date">October 2023 - October 2024</div>
+                <div>
+                    <h3>Freelance Financial Advisor</h3>
+                    <div class="organization">AXA Philippines</div>
+                    <ul>
+                        <li>Prospected clients through social media and presented insurance plans based on their needs.</li>
+                        <li>Handled client inquiries, quotations, policy guidance, and follow-ups.</li>
+                        <li>Served as OIC for one month, coordinating schedules, team updates, and performance support.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="entry">
+                <div class="date">January - March 2026</div>
+                <div>
+                    <h3>Voluntary Intern</h3>
+                    <div class="organization">Xcel Hub Training Services</div>
+                    <ul>
+                        <li>Created social media posts using Canva for marketing and served as the main editor for social content.</li>
+                        <li>Helped plan ideas for reels and short videos to increase engagement.</li>
+                        <li>Assisted in corporate training events by helping students who had difficulty following the lessons.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Training / Seminars</h2>
+            <div class="entry">
+                <div class="date">February 2026</div>
+                <div><h3>Basic Google Looker Studio Dashboarding and Data Visualization</h3></div>
+            </div>
+        </section>
+
+        <footer>Trisha Mae C. Agbayani | Resume 2026</footer>
+    </main>
+</body>
+</html>

@@ -127,7 +127,7 @@
                             <span>→</span>
                         </a>
 
-                        <a href="#" class="btn btn-outline">
+                        <a href="assets/Trisha_Mae_Agbayani_Resume.pdf" class="btn btn-outline resume-download-trigger">
 
                             <img
                                 src="assets/8.png"
@@ -1014,8 +1014,8 @@
 
 
                         <a
-                            href="mailto:trishamaecelestino@gmail.com"
-                            class="btn btn-green contact-button"
+                            href="assets/Trisha_Mae_Agbayani_Resume.pdf"
+                            class="btn btn-green contact-button resume-download-trigger"
                         >
                             DOWNLOAD RESUME
                             <span>→</span>
@@ -1077,6 +1077,21 @@
 
     </main>
 
+    <!-- Ask for confirmation before downloading the resume. -->
+    <dialog class="resume-dialog" id="resume-dialog" aria-labelledby="resume-dialog-title">
+        <div class="resume-dialog__content">
+            <p class="resume-dialog__eyebrow">TRISHA MAE AGBAYANI</p>
+            <h2 id="resume-dialog-title">Download my resume?</h2>
+            <p class="resume-dialog__message">Are you sure you want to download a copy of my resume?</p>
+            <div class="resume-dialog__actions">
+                <button class="resume-dialog__cancel" type="button">NO</button>
+                <a class="btn btn-green resume-dialog__download" href="assets/Trisha_Mae_Agbayani_Resume.pdf" download>
+                    YES, DOWNLOAD <span>&rarr;</span>
+                </a>
+            </div>
+        </div>
+    </dialog>
+
 
     <!-- =====================================================
          FOOTER
@@ -1126,6 +1141,7 @@
 
     </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
