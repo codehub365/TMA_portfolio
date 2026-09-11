@@ -292,6 +292,15 @@ ol {
     column-gap: clamp(35px, 5vw, 90px);
 }
 
+@media (min-width: 901px) {
+    .hero-container {
+        width: min(
+            calc(100% - (clamp(72px, 8vw, 150px) * 2)),
+            1740px
+        );
+    }
+}
+
 .hero-content {
     position: relative;
     z-index: 5;
