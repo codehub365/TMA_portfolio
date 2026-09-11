@@ -1,15 +1,3 @@
-/* =========================================================
-   TRISHA MAE C. AGBAYANI — RESPONSIVE PORTFOLIO CSS
-   Replacement stylesheet based on the supplied mockup/PDF.
-
-   Goals:
-   - Keep the mockup proportions on desktop/laptop screens
-   - Prevent tiny text and cramped sections
-   - Scale cleanly from large desktop -> laptop -> tablet -> phone
-   - Avoid browser-specific sizing assumptions
-   - Keep sticky navigation
-   ========================================================= */
-
 :root {
     --lime: #c5f52a;
     --lime-soft: #d8f86a;
@@ -642,17 +630,39 @@ ol {
     object-fit: cover;
 }
 
-.about-brush {
+.about-brush-badge {
     position: absolute;
-
     z-index: 3;
+    width: 165px;
 
-    width: 135px;
-
-    top: -19px;
+    /* The visible paint stroke sits in the middle of the PNG's transparent canvas. */
+    top: -82px;
     right: -2px;
-
     transform: rotate(-4deg);
+}
+
+.about-brush {
+    display: block;
+    width: 100%;
+}
+
+.about-brush-badge span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 125px;
+
+    color: var(--black);
+
+    font-family: "Caveat", cursive;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.1;
+    text-align: center;
+
+    /* Follow the diagonal stroke inside the brush image. */
+    transform: translate(-50%, -50%) rotate(10deg);
 }
 
 .about-intro {
@@ -989,9 +999,12 @@ ol {
 }
 
 .skill-card {
-    position: relative;
-
     min-height: 145px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     padding: 20px;
 
@@ -1002,10 +1015,13 @@ ol {
 }
 
 .skill-title {
+    align-self: flex-start;
+
     color: var(--lime);
 
-    font-family: var(--mono-font);
-    font-size: clamp(8px, 0.58vw, 10px);
+    font-family: var(--main-font);
+    font-size: clamp(11px, 0.9vw, 15px);
+    font-weight: 800;
     line-height: 1.3;
 
     letter-spacing: 0.08em;
@@ -1013,15 +1029,36 @@ ol {
 }
 
 .skill-icons {
-    position: absolute;
-
-    left: 20px;
-    bottom: 20px;
-
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
+    justify-content: center;
+    gap: clamp(16px, 2vw, 34px);
+
+    width: 100%;
+    margin-top: 14px;
+}
+
+.skill-icon-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.skill-icon-item span {
+    font-family: "Bebas Neue", Impact, sans-serif;
+    font-size: clamp(14px, 1.15vw, 19px);
+    letter-spacing: 0.06em;
+    line-height: 1;
+}
+
+.skill-icon-item small {
+    margin-top: -3px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+    line-height: 1;
 }
 
 .skill-icons img {
@@ -1046,20 +1083,22 @@ ol {
     color: #111;
 }
 
-.skill-highlight span {
-    margin-bottom: 4px;
+.skill-highlight strong {
+    margin-bottom: 12px;
 
-    font-family: var(--mono-font);
-    font-size: clamp(8px, 0.62vw, 10px);
-    line-height: 1.35;
+    font-family: "Caveat", cursive;
+    font-size: clamp(28px, 2.1vw, 38px);
+    font-weight: 600;
+    line-height: 0.95;
+
+    letter-spacing: 0;
 }
 
-.skill-highlight strong {
-    font-size: clamp(18px, 1.55vw, 25px);
-    font-weight: 800;
-    line-height: 1.06;
+.skill-highlight p {
+    margin: 0;
 
-    letter-spacing: -0.05em;
+    font-size: clamp(11px, 0.9vw, 15px);
+    line-height: 1.35;
 }
 
 
@@ -1615,8 +1654,14 @@ ol {
         height: 310px;
     }
 
-    .about-brush {
-        width: 115px;
+    .about-brush-badge {
+        width: 145px;
+        top: -72px;
+    }
+
+    .about-brush-badge span {
+        width: 110px;
+        font-size: 18px;
     }
 
     .experience-row {
@@ -1890,9 +1935,15 @@ ol {
         height: 290px;
     }
 
-    .about-brush {
-        width: 105px;
+    .about-brush-badge {
+        width: 130px;
+        top: -64px;
         right: 4%;
+    }
+
+    .about-brush-badge span {
+        width: 98px;
+        font-size: 16px;
     }
 
     .about-intro {
@@ -1950,8 +2001,6 @@ ol {
     }
 
     .skill-icons {
-        left: 17px;
-        bottom: 17px;
         gap: 12px;
     }
 
