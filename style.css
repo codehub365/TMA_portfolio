@@ -1330,18 +1330,36 @@ ol {
 ========================================================= */
 
 .contact {
-    background:
-        radial-gradient(
-            circle at 10% 100%,
-            rgba(197, 245, 42, 0.10),
-            transparent 36%
-        ),
-        var(--black);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background: var(--black);
+}
+
+.contact::before {
+    position: absolute;
+    z-index: 0;
+    top: -250px;
+    left: -250px;
+
+    width: 680px;
+    aspect-ratio: 1;
+
+    background: url("assets/6.png") center / contain no-repeat;
+    content: "";
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.contact .section-container {
+    position: relative;
+    z-index: 1;
 }
 
 .contact h2 {
     max-width: 900px;
-    margin-bottom: clamp(48px, 5vw, 64px);
+    margin-bottom: clamp(38px, 4vw, 54px);
 }
 
 .contact-grid {
@@ -1357,31 +1375,36 @@ ol {
 .contact-info > p {
     max-width: 500px;
 
-    margin-bottom: 27px;
+    margin-bottom: 36px;
 
     color: #888;
 
-    font-size: clamp(12px, 0.82vw, 14px);
-    line-height: 1.75;
+    font-size: clamp(14px, 1.1vw, 18px);
+    line-height: 1.45;
 }
 
 .contact-line {
-    min-height: 50px;
+    min-height: 68px;
 
     display: grid;
     grid-template-columns: 75px minmax(0, 1fr) 20px;
 
     align-items: center;
 
-    border-top: 1px solid var(--border-dark);
+    margin-bottom: 14px;
+    padding: 0 24px;
 
-    font-family: var(--mono-font);
-    font-size: clamp(8px, 0.61vw, 10px);
+    border: 1px solid #343434;
+    border-radius: var(--pill-radius);
+
+    font-family: var(--main-font);
+    font-size: clamp(12px, 0.88vw, 15px);
     line-height: 1.4;
 }
 
 .contact-line > span {
-    color: #666;
+    color: #888;
+    font-weight: 800;
 }
 
 .contact-line strong {
@@ -1389,19 +1412,45 @@ ol {
 
     overflow-wrap: anywhere;
 
-    color: #ddd;
+    color: #e5e5e5;
     font-weight: 400;
 }
 
 .contact-line b {
-    color: var(--lime);
+    color: #fff;
 
-    font-size: 14px;
+    font-size: 22px;
     font-weight: 500;
 }
 
 .contact-button {
     margin-top: 25px;
+    min-height: 60px;
+    padding-inline: 30px;
+
+    font-family: var(--main-font);
+    font-weight: 800;
+}
+
+.contact-button span,
+.contact-form button span {
+    display: none;
+}
+
+.contact-button::before,
+.contact-submit::before {
+    width: 20px;
+    height: 20px;
+
+    content: "";
+}
+
+.contact-button::before {
+    background: url("assets/23.png") center / contain no-repeat;
+}
+
+.contact-submit::before {
+    background: url("assets/10.png") center / contain no-repeat;
 }
 
 
@@ -1410,10 +1459,10 @@ ol {
 ========================================================= */
 
 .contact-form {
-    padding: 26px;
+    padding: 34px 42px 42px;
 
-    border: 1px solid #484848;
-    border-radius: var(--radius);
+    border: 2px solid #555;
+    border-radius: 30px;
 
     background: rgba(255, 255, 255, 0.02);
 }
@@ -1421,12 +1470,13 @@ ol {
 .contact-form label {
     display: block;
 
-    margin-bottom: 7px;
+    margin-bottom: 10px;
 
     color: #777;
 
-    font-family: var(--mono-font);
-    font-size: clamp(8px, 0.59vw, 10px);
+    font-family: var(--main-font);
+    font-size: clamp(11px, 0.8vw, 14px);
+    font-weight: 800;
     line-height: 1.3;
 }
 
@@ -1437,11 +1487,11 @@ ol {
     width: 100%;
     min-width: 0;
 
-    margin: 0 0 20px;
-    padding: 12px 13px;
+    margin: 0 0 24px;
+    padding: 14px 16px;
 
-    border: 1px solid #3d3d3d;
-    border-radius: 8px;
+    border: 1px solid #515151;
+    border-radius: var(--pill-radius);
 
     outline: none;
 
@@ -1458,7 +1508,8 @@ ol {
 }
 
 .contact-form textarea {
-    min-height: 105px;
+    min-height: 145px;
+    border-radius: 24px;
     resize: vertical;
 }
 
@@ -1474,6 +1525,11 @@ ol {
 
 .contact-form button {
     border: 0;
+    min-height: 60px;
+    padding-inline: 30px;
+
+    font-family: var(--main-font);
+    font-weight: 800;
 }
 
 
@@ -1482,9 +1538,9 @@ ol {
 ========================================================= */
 
 .footer {
-    padding: 48px 0 20px;
+    padding: 72px 0 28px;
 
-    background: #111;
+    background: var(--black);
     color: #fff;
 }
 
@@ -1503,7 +1559,7 @@ ol {
 .footer h3 {
     margin-bottom: 7px;
 
-    font-size: clamp(14px, 0.95vw, 16px);
+    font-size: clamp(24px, 2vw, 34px);
     line-height: 1.3;
 }
 
@@ -1512,9 +1568,17 @@ ol {
 
     color: #777;
 
-    font-family: var(--mono-font);
-    font-size: clamp(8px, 0.6vw, 10px);
+    color: var(--lime);
+
+    font-family: var(--main-font);
+    font-size: clamp(12px, 0.9vw, 15px);
     line-height: 1.5;
+}
+
+.footer-note {
+    color: #888 !important;
+    font-family: "Caveat", cursive !important;
+    font-size: clamp(18px, 1.35vw, 24px) !important;
 }
 
 .footer a {
@@ -1526,12 +1590,17 @@ ol {
 
 .footer-links {
     display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .footer-links a {
     color: #777;
+
+    font-family: var(--main-font);
+    font-size: clamp(12px, 0.9vw, 15px);
+    font-weight: 700;
 }
 
 .footer-links a:hover {
@@ -1552,6 +1621,15 @@ ol {
     font-family: var(--mono-font);
     font-size: clamp(7px, 0.53vw, 9px);
     line-height: 1.4;
+}
+
+.footer-bottom span:first-child {
+    font-size: 0;
+}
+
+.footer-bottom span:first-child::before {
+    content: "\00a9 2026 Trisha Mae C. Agbayani. All rights reserved.";
+    font-size: clamp(10px, 0.72vw, 12px);
 }
 
 
